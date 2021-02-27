@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@300;400;700&display=swap');
+
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+
+:root {
+	font-size: 62.5%;
+
+	& body {
+		font-size: 1.6rem;
+		line-height: 2.6rem;
+		color: var(--lightGrey);
+	}
+}
+
+html {
+	font-family: 'Kumbh Sans', sans-serif;
+}
+
+:--heading {
+	color: var(--darkGrey);
+}
+
+h1 {
+	font-size: 4rem;
+	line-height: 4.8rem;
+
+	@media (--laptop) {
+		font-size: 5.6rem;
+		line-height: 6.4rem;
+	}
+}
+
+h2 {
+	font-size: 2rem;
+	line-height: 2.8rem;
+}
+
+h3 {
+	font-size: 1.6rem;
+	line-height: 4.8rem;
+	text-transform: uppercase;
+	letter-spacing: .5rem;
+}
+

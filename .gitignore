@@ -3,7 +3,6 @@ node_modules
 
 # build artefacts
 public
-src/css
 social
 
 # secrets and errors
@@ -15,3 +14,4 @@ social
 
 #IDE
 .idea
+files/

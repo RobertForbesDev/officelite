@@ -1,0 +1,25 @@
+@import 'base/reset.css';
+@import 'base/queries.css';
+@import 'base/color.css';
+@import 'base/typography';
+@import 'components/button.css';
+@import 'components/intro.css';
+@import 'components/navbar.css';
+@import 'components/countdown.css';
+@import 'components/prices.css';
+@import 'layout/site-header.css';
+@import 'layout/site-footer.css';
+
+.wrapper {
+	max-width: 1110px;
+	text-align: center;
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+	margin: 0 auto;
+
+	@media (--tablet) {
+		text-align: left;
+		padding-left: 4rem;
+		padding-right: 4rem;
+	}
+}

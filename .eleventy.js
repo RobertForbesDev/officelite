@@ -3,6 +3,7 @@ const emojiRegex = require("emoji-regex");
 const slugify = require("slugify");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const image = require("@11ty/eleventy-img");
 const packageVersion = require("./package.json").version;
 
 const dateFilter = require('./src/_11ty/filters/date-filter.js');
@@ -13,6 +14,23 @@ const w3DateFilter = require('./src/_11ty/filters/w3-date-filter.js');
 const { configFunction } = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 const site = require('./src/_data/site.json');
+
+async function imageShortcode(src, alt, sizes) {
+	let metadata = await image(src, {
+		widths: [320, 640, 960, 1280, 1680],
+		formats: ['webp', 'jpeg'],
+		outputDir: './public/img'
+	});
+
+	let imageAttributes = {
+		alt,
+		sizes,
+		loading: 'lazy',
+		decoding: 'async',
+	};
+
+	return image.generateHTML(metadata, imageAttributes);
+}
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(socialImages);
@@ -68,6 +86,7 @@ module.exports = function (eleventyConfig) {
 		.slice(0, site.maxPostsPerPage);
 	})
 
+	eleventyConfig.addNunjucksAsyncShortcode('image', imageShortcode);
 
   return {
     passthroughFileCopy: true,

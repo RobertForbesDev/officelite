@@ -1,0 +1,20 @@
+.site-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+
+	@media (--tablet) {
+		justify-content: flex-start;
+	}
+}
+
+.site-header__brand {
+	display: inline-block;
+	width: 155px;
+}
+
+.site-header__inner {
+	width: 100%;
+}

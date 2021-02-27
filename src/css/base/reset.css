@@ -1,0 +1,49 @@
+@import 'normalize.css/normalize.css';
+
+*,
+&::before,
+*::after {
+	box-sizing: border-box;
+}
+
+figure {
+	margin: 0;
+	padding: 0;
+}
+
+img {
+	display: block;
+	width: 100%;
+}
+
+html {
+	& body {
+		margin: 0;
+		padding: 0;
+		background-color: #fafafa;
+		background-image: url('/img/home/bg-pattern-header.svg');
+		background-position: center -170px;
+		background-size: 458px;
+		background-repeat: no-repeat;
+
+		@media (--tablet) {
+			background-size: 666px;
+			background-position: 333px -220px;
+		}
+
+		@media (--laptop) {
+			background-size: 1134px;
+			background-position: 520px -490px;
+		}
+
+		@media (--desktop) {
+			background-position: 890px -419px;
+		}
+	}
+}
+
+.section {
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+

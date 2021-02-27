@@ -1,26 +1,93 @@
 {% extends 'layouts/base.njk' %}
 
-{# Intro conent #}
-{% set introHeading = title %}
-{% set introSummary %}
-	{{ content | safe }}
-{% endset %}
-
-{# Post list content #}
-{% set postListHeading = postsHeading %}
-{% set postListItems = collections.postFeed %}
-
-{# Archive link #}
-{% if postListItems.length < collections.posts.length %}
-	{% set paginationNextText = archiveButtonText %}
-	{% set paginationNextUrl = '/blog' %}
-{% endif %}
-
 {% block content %}
-	<main if="main-content" tabindex="-1">
-		{% include 'partials/components/intro.njk' %}
-		{% include 'partials/components/post-list.njk' %}
-		{% include 'partials/components/pagination.njk' %}
+	<main class="main__content" tabindex="-1">
+		<section class="section intro">
+			<div class="wrapper intro__wrapper">
+				<div class="intro__body">
+					<h1 class="intro__heading">A simple solution to complex tasks is coming soon</h1>
+					<p class="intro__description">Say goodbye to inefficient juggling of multiple apps, teams, and projects.  Officelite is the new collaboration platform built with an intuitive interface to improve productivity</p>
+					<a class="button button--accent button--shadow" href="#">Get Started</a>
+				</div>
+				<figure class="intro__image">
+					<img src="/img/home/illustration-charts.svg" />
+				</figure>
+			</div>
+		</section>
+
+		<section class="section prices">
+			<div class="wrapper price__list">
+				<div class="price__item">
+					<header class="price__header">
+						<p class="price__title">Basic</p>
+						<h1 class="price__value">Free</h1>
+						<p class="price__terms">Up to 5 users for free</p>
+					</header>
+					<ul class="price__features">
+						<li>Basic document collaboration</li>
+						<li>2 GB storage</li>
+						<li>Great security and support</li>
+					</ul>
+					<a class="button button--shade" href="#">Try for Free</a>
+				</div>
+				<div class="price__item price__item--inverted">
+					<header class="price__header">
+						<p class="price__title">Pro</p>
+						<h1 class="price__value">$9.99</h1>
+						<p class="price__terms">Per user, billed monthy</p>
+					</header>
+					<ul class="price__features">
+						<li>All essential integrations</li>
+						<li>50 GB storage</li>
+						<li>More control and insights</li>
+					</ul>
+					<a class="button button--bright" href="#">Try for Free</a>
+				</div>
+				<div class="price__item">
+					<header class="price__header">
+						<p class="price__title">Ultimate</p>
+						<h1 class="price__value">$19.99</h1>
+						<p class="price__terms">Per user, billed monthy</p>
+					</header>
+					<ul class="price__features">
+						<li>Robust work management</li>
+						<li>100 GB storage</li>
+						<li>VIP support</li>
+					</ul>
+					<a class="button button--shade" href="#">Try for Free</a>
+				</div>
+			</div>
+		</section>
+
+		<footer class="countdown">
+			<div class="wrapper countdown__wrapper">
+				<h3 class="countdown__heading">Coming <span class="countdown__date">4 Nov 2020</span></h3>
+				<div class="countdown__timer">
+					<div class="countdown__unit">
+						<p class="countdown__value">47</p>
+						<span class="countdown__type">days</span>
+					</div>
+					<div class="countdown__unit">
+						<p class="countdown__value">07</p>
+						<span class="countdown__type">hours</span>
+					</div>
+					<div class="countdown__unit">
+						<p class="countdown__value">56</p>
+						<span class="countdown__type">min</span>
+					</div>
+					<div class="countdown__unit">
+						<p class="countdown__value">14</p>
+						<span class="countdown__type">sec</span>
+					</div>
+				</div>
+				<footer class="countdown__cta">
+					<a href="#" class="button button--accent">
+						Get Started
+					</a>
+				</footer>
+			</div>
+		</section>
+
 	</main>
 
 {% endblock %}

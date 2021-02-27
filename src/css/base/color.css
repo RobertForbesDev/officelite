@@ -1,0 +1,10 @@
+:root {
+	--blue: rgb(81, 117, 255);
+	--lightBlue: rgb(130, 156, 255);
+	--grey: rgb(51, 57, 80);
+	--lightGrey: rgb(116, 123, 149);
+	--darkGrey: rgb(37, 41, 58);
+	--secondary: rgb(240, 91, 91);
+
+	--shade: rgba(81, 117, 255, .15);
+}

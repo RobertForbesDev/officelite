@@ -1,0 +1,145 @@
+.prices {
+	position: relative;
+	height: 810px;
+
+	@media (--tablet) {
+		height: 445px;
+	}
+
+	@media (--laptop) {
+		height: 180px;
+	}
+
+	@media (--desktop) {
+		height: 195px;
+	}
+}
+
+.price__list {
+	display: flex;
+	flex-direction: column;
+	gap: 3.2rem;
+	position: absolute;
+	width: calc(100% - 4rem);
+	left: 50%;
+	transform: translateX(-50%);
+
+	@media (--tablet) {
+		width: calc(100% - 8rem);
+	}
+
+	@media (--laptop) {
+		flex-direction: row;
+	}
+}
+
+.price__item {
+	background-color: white;
+	color: var(--darkGrey);
+	border-radius: 1.3rem;
+	padding: 5rem;
+	display: flex;
+	flex-direction: column;
+
+	@media (--tablet) {
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	@media (--laptop) {
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		padding: 3rem;
+		width: 33.33%;
+	}
+
+	@media (--desktop) {
+		padding: 4.4rem;
+	}
+}
+
+.price__header {
+	margin-bottom: 5.6rem;
+
+	@media (--tablet) {
+    margin-bottom: 2.4rem;
+		width: 50%;
+		flex-grow: 1;
+	}
+
+	@media (--laptop) {
+		width: auto;
+		flex-grow: 0;
+		margin-bottom: 5.6rem;
+	}
+}
+
+.price__title {
+	margin-top: 0;
+	font-weight: bold;
+}
+
+.price__value {
+	margin-bottom: 0;
+
+	@media (--tablet) {
+		margin-top: 1.6rem;
+		margin-bottom: 1.6rem;
+	}
+
+	@media (--laptop) {
+		margin-top: 3rem;
+		margin-bottom: 1rem;
+	}
+}
+
+.price__terms {
+	@media (--tablet) {
+		margin: 0;
+	}
+}
+
+.price__features {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 3.2rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.6rem;
+
+	@media (--tablet) {
+		width: 50%;
+		margin: 0;
+		align-self: flex-end;
+		width: 220px
+	}
+
+	@media (--laptop) {
+		width: unset;
+		margin-bottom: 3.2rem;
+		align-self: unset;
+	}
+}
+
+.price__item--inverted {
+	background-image: url('/img/home/bg-pattern-pricing.svg');
+	background-color: var(--blue);
+	background-size: 880px;
+	background-position: center bottom;
+	background-repeat: no-repeat;
+	color: white;
+
+	@media (--tablet) {
+		background-size: 880px;
+		background-position: -330px center;
+	}
+
+	@media (--laptop) {
+		background-position: center -430px;
+	}
+
+	& .price__value {
+		color: white;
+	}
+}
